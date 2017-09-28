@@ -47,9 +47,9 @@ func SetRetryInterval(interval time.Duration) Option {
 }
 
 // Create new redis sync
-func NewRediSync(addr string) *RediSync {
+func NewRediSync(pool *redis.Pool) *RediSync {
 	return &RediSync{
-		pool: newRedisPool(addr),
+		pool: pool,
 	}
 }
 

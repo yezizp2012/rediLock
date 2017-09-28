@@ -7,7 +7,7 @@ import (
 )
 
 func TestMutex(t *testing.T) {
-	rs := NewRediSync("redis://127.0.0.1:6379")
+	rs := NewRediSync(newRedisPool("redis://127.0.0.1:6379"))
 	wg := sync.WaitGroup{}
 	for i := 0; i < 100; i++ {
 		wg.Add(1)
