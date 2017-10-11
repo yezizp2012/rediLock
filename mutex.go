@@ -109,7 +109,7 @@ func (m *Mutex) Lock() {
 }
 
 // Trying to unlock using delete script.
-func (m *Mutex) UnLock() {
+func (m *Mutex) Unlock() {
 	c := m.pool.Get()
 	defer c.Close()
 	for {

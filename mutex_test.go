@@ -15,7 +15,7 @@ func TestMutex(t *testing.T) {
 			defer wg.Done()
 			mutex := rs.NewMutex("test_mutex", SetExpire(time.Second))
 			mutex.Lock()
-			defer mutex.UnLock()
+			defer mutex.Unlock()
 
 			t.Logf("[%d]test_mutex locked.", idx)
 			time.Sleep(time.Millisecond * 100)
